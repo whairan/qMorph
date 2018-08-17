@@ -1,0 +1,12 @@
+
+<form action="{% url 'registration:pr' %}" method="POST">
+	{% csrf_token %}
+    <input id="submit" type="submit" value="test" />
+</form>
+
+<form action="{% url 'registration:upload_file' %}" method="POST">
+	{% csrf_token %}
+    <input id="submit" type="submit" value="Upload" />
+</form>
+
+<p><a href="{% url 'registration:index' %}">Return to home</a></p>

@@ -1,0 +1,53 @@
+{% load static %"}
+<!DOCTYPE html>
+<html>
+<head>
+  <title><h1> Brain Image Morphing </h1></title>
+  <style type="text/css">
+    #title{
+      text-align: center;
+      background-color: gray;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  {% block content %}
+ 
+  <header id="title"> <h1> Brain Image Morphing </h1> </header>
+<center><img src="Ideal.png" alt="rat_brain"></center>
+  <ul>
+    <li>
+      <a href="{% url 'registration:pr' %}">Check</a>
+
+      <div>
+        <form action="{% url 'registration:upload_file' %}" method="POST">
+          {% csrf_token %}
+          <br>
+          <input id="submit" type="submit" value="Download" />
+      </form>
+      </div>
+
+      <div>
+        <p><a href="{% url 'registration:index' %}">Return to home</a></p>
+      </div>
+      
+    </li>
+  </ul>
+
+  <p>Uploaded files:</p>
+  <ol>
+    {% for obj in uploads %}
+      <li>
+      <a href="{{ obj.uploads.url }}">{{ obj.uploads.name }}</a>
+      <small>(Uploaded at: {{ obj.uploaded_at }})</small>
+    </li>
+    {% endfor %}
+  </ol>
+
+
+
+{% endblock %}
+
+</body>
+</html>

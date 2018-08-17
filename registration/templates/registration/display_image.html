@@ -1,0 +1,56 @@
+{% load static %}
+
+{% block title %}
+<title>
+	{{document.title}}
+</title>
+{% endblock %}
+<head>
+	<style type="text/css">
+		.responsive{
+			padding: 0 80px;
+			float: left;
+		}
+		.button{
+			padding: 0 250px;
+
+			float: left;
+		}
+	</style>
+</head>
+
+<center><p>Uploaded Images:</p></center>
+
+{% block body %}
+<!-- <div id="gallery"> -->
+	<h1>{{document.title}}</h1>
+	<div style="border-left:5px red solid; height: 500px; right: 50%; position: absolute;"></div>
+	<!-- <img src="{{document.image.url}}" alt="{{document.title}}" width="500"> -->
+	<div class="responsive">
+		<img src="{% static './img/user.png' %}" alt="image" width="500">
+	<p>{{document.desc}}</p>
+
+	</div>
+
+	<div class="responsive">
+		<img src="{% static './img/Ideal.png' %}" alt="image" width="500">
+	<p>{{document.desc}}</p>
+	</div>
+
+	<div class="button">
+		<form action="{% url 'registration:images' %}" method="POST">
+		{% csrf_token %}
+		<input id="submit" type="submit" value="Upload Raw Image"/>
+		</form>
+	</div>
+
+	<div class="button">
+		<form action="{% url 'registration:images' %}" method="POST">
+		{% csrf_token %}
+		<input id="submit" type="submit" value="Upload Ideal Image"/>
+		</form>
+	</div>
+
+<!-- </div> -->
+{% endblock %}
+

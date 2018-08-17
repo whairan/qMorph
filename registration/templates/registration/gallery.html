@@ -1,0 +1,106 @@
+<!-- {% load static %} -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div.gallery {
+    border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .responsive {
+        width: 100%;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
+</head>
+<body>
+
+<h2>Uploaded Image Gallery</h2>
+<h4>Responsive to resizing of the page.</h4>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="Ideal.png">
+      <img src="Ideal.png" alt="image" width="600" height="400">
+    </a>
+    <div class="desc">Description</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="Ideal.png">
+      <img src="Ideal.png" alt="image" width="600" height="400">
+    </a>
+    <div class="desc">Description</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a  href="Ideal.png">
+      <img src="Ideal.png" alt="image" width="600" height="400">
+    </a>
+    <div class="desc">Description</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="Ideal.png">
+      <img src="Ideal.png" alt="image" width="600" height="400">
+    </a>
+    <div class="desc">Description</div>
+  </div>
+</div>
+
+
+<hr style="padding-top: 10px;">
+
+<div>
+  <form action="{% url 'registration:upload_file' %}" method="POST">
+  <input id="submit" type="submit" value="Upload" />
+  </form>
+</div>
+
+
+</body>
+</html>

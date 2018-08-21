@@ -84,13 +84,12 @@
 
 		/* #e8491d , #FF3399;*/
 		footer{
-			padding: 20px;
+			padding: 30px;
 			background-color: #e8491d; 
 			text-align: center;
 		}
 
 		#options{
-			align-content: center;
 			padding: 20px;
 			background-color: gray;
 			margin: auto;
@@ -114,13 +113,13 @@
 				</div>
 				<nav>
 					<ul>
-						<li><a href="{% url 'registration:home_page' %}">HOME</li>
-						<li class="current"><a href="{% url 'registration:index' %}">MENU</li>
+						<li><a href="{% url 'registration:home_page' %}">INTRODUCTION</a></li>
+						<li class="current"><a href="{% url 'registration:index' %}">WARP</a></li>
 					</ul>
 				</nav>
 			</div>
 		</header>
-		<!-- <section> -->
+
 		<aside id="options">
 			<div>
 				<form action="{% url 'registration:pr' %}" method="POST">
@@ -138,34 +137,25 @@
 			</div>
 			<br>
 
-			<form action="{% url 'registration:upload_file' %}" method="POST">
+<!-- 			<form action="{% url 'registration:upload_file' %}" method="POST">
 			{% csrf_token %}
    			<input id="submit" type="submit" value="Register" />
-			</form>
-			<!-- </section> -->
+			</form> -->
 
 			<br>
-			
 
-			<!-- <section> -->
-			<div>
-				<form action="{% url 'registration:home' %}" method="POST">
-				{% csrf_token %}
-   				<input id="submit" type="submit" value="Uploads list" />
-				</form>
-			</div>
+
 			
 			<br>
 
 			<div>
 				<form action="{% url 'registration:images' %}" method="POST">
 				{% csrf_token %}
-   				<input id="submit" type="submit" value="Upload for warping" />
+   				<input id="submit" type="submit" value="Images" />
 				</form>
 			</div>
 		</aside>
-			
-			<!-- </section> -->
+
 		<hr>
 		<center>
 		<p><a href="{% url 'registration:index' %}">Return to home</a></p>

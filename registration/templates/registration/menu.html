@@ -94,6 +94,8 @@
 			background-color: gray;
 			margin: auto;
 			width: 200px;
+			height: 1000;
+
 
 		}
 		#submit{
@@ -102,6 +104,14 @@
 			display: inline-block;
 			font-size: 16px;
 		}
+/*		#image-sect{
+			float: left;
+			padding: 0 150px;
+		}
+		#img{
+			/*float: left;*/
+			/*padding: 0 200px;*/
+		/*}*/
 	</style>
 
 	<body>
@@ -137,14 +147,12 @@
 			</div>
 			<br>
 
-<!-- 			<form action="{% url 'registration:upload_file' %}" method="POST">
+			<form action="{% url 'registration:upload_file' %}" method="POST">
 			{% csrf_token %}
    			<input id="submit" type="submit" value="Register" />
-			</form> -->
+			</form>
 
 			<br>
-
-
 			
 			<br>
 
@@ -156,15 +164,26 @@
 			</div>
 		</aside>
 
-		<hr>
+<!-- 		<section id="image-sect">
+			<div id="img" >
+				<img src="{% static './img/user.png' %}" alt="image" width="500">
+				<p>{{document.desc}}</p>
+
+			</div>
+
+			<div id="img">
+				<img src="{% static './img/ideal.png' %}" alt="image" width="500">
+				<p>{{document.desc}}</p>
+			</div>
+		</section> -->
 		<center>
 		<p><a href="{% url 'registration:index' %}">Return to home</a></p>
 		</center>
 
 
-		<footer>
-			<p>qMorph app, Copyright &copy; 2018</p>
-		</footer>
+	<footer>	
+		<p>qMorph app, Copyright &copy; 2018</p>
+	</footer>
 
 	</body>
 </html>

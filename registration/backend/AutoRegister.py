@@ -37,6 +37,7 @@ def AutoRegister(dirname, outdir, NMarkers):
 
         np.savetxt(TemplateCSV, np.vstack(inst.Template_primary_markers), delimiter=',', fmt='%4d')
 
+
 NMarkers = [10, 15]
 DirName = './In/'
 OutDir = './Out/'

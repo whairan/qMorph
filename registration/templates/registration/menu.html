@@ -9,100 +9,10 @@
 		<meta name="authors" content="Wali Hairan & Dr. Shiva">
 		
 		<title>qMorph app | Menu</title>
-		<!-- <link rel="stylesheet" type="text/css" href="{% static './css/style.css' %}"> -->
+		<link rel="stylesheet" type="text/css" href="{% static './css/warp_buttons.css' %}">
 	</head>
 
-	<style type="text/css">
-		body{
-			font: 15px/1.5 Arial, Helvetica, sans-serif;
-			padding: 0;
-			margin: 0;
-			background-color: #f4f4f4;
-		}
 
-		.container{
-			/* global */
-
-			width: 80%;
-			margin: auto;
-			overflow: hidden;
-
-		}
-
-		ul{
-			margin: 0;
-			padding: 0;
-
-		}
-
-		header{
-			background: #35424a;
-			color:#ffffff;
-			padding-top: 30px;
-			min-height: 70px;
-			border-bottom: #e8491d 3px solid;
-		}
-
-		header a{
-			color: #ffffff;
-			text-decoration:none;
-			text-transform: uppercase;
-			font-size: 16px;
-		}
-
-
-		header li{
-			float: left;
-			display: inline;
-			padding: 0 20px 0 20px;
-
-		}
-
-		header #logo{
-			float: left;
-		}
-
-		header #logo h1{
-			margin: 0;
-		}
-
-		header nav{
-			float: right;
-			margin-top: 10px;
-		}
-
-		header .highlight, header .current a{
-			color: #e8491d;
-			font-weight: bold;
-
-		}
-
-		header a:hover{
-			color: #cccccc;
-			font-weight: bold;
-		}
-
-		/* #e8491d , #FF3399;*/
-		footer{
-			padding: 30px;
-			background-color: #e8491d; 
-			text-align: center;
-		}
-
-		#options{
-			padding: 20px;
-			background-color: gray;
-			margin: auto;
-			width: 200px;
-
-		}
-		#submit{
-			align-content: center;
-			background: #008CBA;
-			display: inline-block;
-			font-size: 16px;
-		}
-	</style>
 
 	<body>
 		<header>
@@ -137,15 +47,23 @@
 			</div>
 			<br>
 
-<!-- 			<form action="{% url 'registration:upload_file' %}" method="POST">
+			<form action="{% url 'registration:upload_file' %}" method="POST">
 			{% csrf_token %}
    			<input id="submit" type="submit" value="Register" />
-			</form> -->
+			</form>
 
 			<br>
-
-
+			<form action="{% url 'registration:home' %}" method="POST">
+				{% csrf_token %}
+   				<input id="submit" type="submit" value="Download" />
+			</form>
 			
+			<br>
+
+			<form action="{% url 'registration:home' %}" method="POST">
+				{% csrf_token %}
+   				<input id="submit" type="submit" value="Warp" />
+			</form>
 			<br>
 
 			<div>
@@ -156,15 +74,27 @@
 			</div>
 		</aside>
 
-		<hr>
+<!-- 		<section id="image-sect">
+			<div id="img" >
+				<img src="{% static './img/user.png' %}" alt="image" width="500">
+				<p>{{document.desc}}</p>
+
+			</div> -->
+
+<!-- 			<div id="img">
+				<img src="{% static './img/ideal.png' %}" alt="image" width="500">
+				<p>{{document.desc}}</p>
+			</div>
+		</section> -->
 		<center>
 		<p><a href="{% url 'registration:index' %}">Return to home</a></p>
 		</center>
 
 
-		<footer>
-			<p>qMorph app, Copyright &copy; 2018</p>
-		</footer>
+	<footer>	
+		<p>qMorph app, Copyright &copy; 2018</p>
+	</footer>
+
 
 	</body>
 </html>

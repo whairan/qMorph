@@ -41,16 +41,16 @@
 	</div>
 
 	<div class="button">
-		<form action="{% url 'registration:images' %}" method="POST">
+		<form action="{% url 'registration:gallery' %}" method="POST">
 		{% csrf_token %}
-		<input id="submit" type="submit" value="Upload Raw Image"/>
+		<input id="button" type="submit" value="Upload Raw Image"/>
 		</form>
 	</div>
 
 	<div class="button">
 		<form action="{% url 'registration:images' %}" method="POST">
 		{% csrf_token %}
-		<input id="submit" type="submit" value="Upload Ideal Image"/>
+		<input id="button" type="submit" value="Upload Ideal Image"/>
 		</form>
 	</div>
 

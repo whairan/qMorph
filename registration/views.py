@@ -12,23 +12,24 @@ from django.http import HttpResponse
 from registration.backend import AutoRegister
 import os
 
-def pr(a):
+def test_print(request):
 	print("hello")
-	return HttpResponse("anything")
-
-
-def home(request):
-    uploads = Document.objects.all()
-    return render(request, 'registration/home.html', { 'uploads': uploads })
-
-def home_page(request):
-	return render(request, 'registration/home_page.html')
+	return HttpResponse("It is working")
 
 
 def index(request):
-	template = loader.get_template('registration/menu.html')
+	template = loader.get_template('registration/warp.html')
 	context = {"a":"b"}
 	return HttpResponse(template.render(context, request))
+
+
+def list_of_images(request):
+    uploads = Document.objects.all()
+    return render(request, 'registration/list_of_images.html', { 'uploads': uploads })
+
+
+def home_page(request):
+	return render(request, 'registration/home_page.html')
 
 
 def upload_file(request):
@@ -45,29 +46,26 @@ def upload_file(request):
 
 def download(request, path):
 	"""This function allows the user to download the registered file"""
-	file_path = os.path.join(settings.MEDIA_ROOT, path)
-	if os.path.exists(file_path):
-	    with open(file_path, 'rb') as fh:
-	    	content_type = magic.from_buffer(image_buffer, mime=True)
-	    	response = HttpResponse(fh.read(), content_type=content_type)
-	    	response['Content-Disposition'] = 'inline; filename=' + os.path.basename(file_path)
-	    	return response
-	raise Http404
+	pass
+
 
 def images(request):
   images = Image.objects.all()
   return render(request, "registration/display_image.html", {'images': images})
 
-def register(a):
+
+def register(request):
 	"""This function takes the uploaded files and registers them"""
 	print("It works, yay!")
 	return HttpResponse("fix the registration function in Views")
 
 
 def gallery(request):
-    path = "/Users/wall-E/Desktop/imgReg/uploads/"
-    img_list = os.listdir(path)
-    return render(request, 'registration/display_image.html', {'imgs': img_list})
+    #path = "registration/uploads/"
+    #img_list = os.listdir(path)
+    #uploads = Document.objects.all()
+    return render(request, 'registration/gallery.html', {'imgs': "a"})
+
 
 def read_image(path = None, stream = None, url= None):
 	if path is not None:
@@ -80,5 +78,7 @@ def read_image(path = None, stream = None, url= None):
 			data_temp = stream.read()
 		image = np.asarray(bytearray(data_temp), dtype='unit8')
 		image = cv2.imdecode(image, cv2.IMREAD_COLOR)
-
 	return image
+
+
+

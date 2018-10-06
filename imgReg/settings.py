@@ -120,12 +120,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"), "/Users/wall-E/Desktop/imgReg/registration/static"
+    os.path.join(BASE_DIR, "staticfiles"), #"/Users/wall-E/Desktop/imgReg/registration/static"
     ]
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'registration/media/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 

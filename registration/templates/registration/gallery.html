@@ -1,4 +1,4 @@
-<!-- {% load static %} -->
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,10 +56,13 @@ div.desc {
 <h2>Uploaded Image Gallery</h2>
 <h4>Responsive to resizing of the page.</h4>
 
-<div class="responsive">
+<div>
+
+  <div class="responsive">
   <div class="gallery">
-    <a target="_blank" href="Ideal.png">
-      <img src="Ideal.png" alt="image" width="600" height="400">
+    <a  href="{% static './Ideal_SC_C7I.png' %}">
+      <img src="{% static './Ideal_SC_C7I.png' %}" alt="image" width="600" height="400">
+      <!-- <img src=""> -->
     </a>
     <div class="desc">Description</div>
   </div>
@@ -67,7 +70,7 @@ div.desc {
 
 <div class="responsive">
   <div class="gallery">
-    <a target="_blank" href="Ideal.png">
+    <a  href="Ideal.png">
       <img src="Ideal.png" alt="image" width="600" height="400">
     </a>
     <div class="desc">Description</div>
@@ -94,6 +97,10 @@ div.desc {
 
 
 <hr style="padding-top: 10px;">
+
+  
+</div>
+
 
 <div>
   <form action="{% url 'registration:upload_file' %}" method="POST">
